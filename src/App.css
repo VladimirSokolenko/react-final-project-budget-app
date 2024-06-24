@@ -36,3 +36,55 @@
     transform: rotate(360deg);
   }
 }
+
+.curr_frame {
+  background-color: #93E499;
+  color: white;
+  vertical-align: middle;
+  /* align-self: center; */
+  width: 65%;
+  height: 73%;
+  border-radius: 5px;
+  /* place-items: center; */
+  text-align: center;
+  /* margin-left: 1.2em; */
+  /* margin-top: 1em; */
+}
+
+.curr_select {
+  background-color: #93E499;
+  /* vertical-align: middle; */
+  /* width: 60%; */
+  /* height: 73%; */
+  border-width: 0; 
+  border-radius: 5px;
+  /* margin-top: 1em; */
+  /* margin-left: 1.2em; */
+  /* align-self: center; */
+}
+
+/* option:checked {
+  background: red linear-gradient(0deg, red 0%, red 100%);
+} */
+
+/* select {
+  width: 10rem;
+  background-color: #c3f0c6;
+  border: #b2eeac 2px solid;
+}
+
+select>option {
+  background-color: #b8e1ba;
+} */
+
+/* option:hover {
+  background-color: #c9b715;
+} */
+
+/* select.decorated option:hover {
+  box-shadow: 0 0 10px 100px #badd1b inset;
+} */
+
+/* select:focus > option:focus { 
+  background: #e6e20c !important;
+} */
