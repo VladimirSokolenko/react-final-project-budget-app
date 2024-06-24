@@ -3,8 +3,15 @@ import { AppContext } from '../context/AppContext';
 
 const Budget = () => {
     // const { budget } = useContext(AppContext);
+    // const { totalExpence } = useContext(AppContext);
 
-    const { dispatch, budget } = useContext(AppContext);
+    const { dispatch, budget, expenses } = useContext(AppContext);
+
+
+    // const { expenses, budget } = useContext(AppContext);
+    const totalExpenses = expenses.reduce((total, item) => {
+        return (total = total + item.cost);
+    }, 0);
 
     const [newBudget, setNewBudget] = useState(budget);
     // const { newBudget } = useContext(AppContext);
@@ -17,7 +24,7 @@ const Budget = () => {
         //     return;
         // }
 
-        setNewBudget(event.target.value);
+        
         // if(cost > remaining) {
         //     alert("The value cannot exceed remaining funds  £"+remaining);
         //     setCost("");
@@ -29,12 +36,19 @@ const Budget = () => {
         // };
 
         console.log("The new budget:  £" + newBudget);
+        console.log("set_budget " + budget + ", " + totalExpenses)
         // alert("The new budget:  £" + newBudget);
-
-        dispatch({
-            type: 'SET_BUDGET',
-            payload: newBudget,
-        });
+        if (newBudget < totalExpenses) {
+            setNewBudget(budget);
+            alert("You cannot reduce the budget value lower than the spendings!"); 
+        }
+        else {
+            setNewBudget(event.target.value);
+            dispatch({
+                type: 'SET_BUDGET',
+                payload: newBudget,
+            });
+        }
     
     }
     return (
